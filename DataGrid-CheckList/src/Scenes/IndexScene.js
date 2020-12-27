@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SetScene } from '../../Actions/Scene';
+import { SetScene } from './../Actions/Scene';
+ import DataGirdSheet from './DataGirdSheet'
 
-class IndexPage extends Component {
+class IndexScene extends Component {
     componentDidMount() {
         console.log('IndexScene component start');
     }
 
     renderScene = () => {
-        return (<div>hello world!</div>);
+        return (<DataGirdSheet />);
     };
 
     render() {
@@ -31,5 +32,5 @@ let mapDispatchToProps = (dispatch) => {
         onSetScene: (param1) => dispatch(SetScene(param1))
     }
 }
-IndexPage = connect(mapStateToProps, mapDispatchToProps)(IndexPage);
-export default IndexPage;
+IndexScene = connect(mapStateToProps, mapDispatchToProps)(IndexScene);
+export default IndexScene;

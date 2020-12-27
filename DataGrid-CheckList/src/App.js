@@ -1,11 +1,11 @@
-import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import IndexPage from './Pages/Bases/IndexPage'
+import IndexScene from './Scenes/IndexScene'
 
 function App() {
   return (
     <div className="App">
-      <IndexPage />
+      <IndexScene />
     </div>
   );
 }

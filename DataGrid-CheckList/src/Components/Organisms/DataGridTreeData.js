@@ -23,6 +23,10 @@ export function GetColumnsData() {
         {
             name: 'Owner',
             title: '담당자'
+        },
+        {
+            name: 'Action',
+            title: '동작'
         }
     ];
 
@@ -96,13 +100,14 @@ export function GetRowsData() {
         { LargeCategory: '밸런스', MediumCategory: '마법사', SmallCategory: '스탯2', Desc: 'QA 목록 4', Owner: 'goli81', Complete: 'false', expand: true },
     ];
 
-    for (var i = 0; i < rows.length; i++) {
+    var i = 0
+    for (i = 0; i < rows.length; i++) {
         rows[i].id = i;
         rows[i].parentId = null
     }
 
     let treeMap = new Map()
-    for (var i = 0; i < rows.length; i++) {
+    for (i = 0; i < rows.length; i++) {
         var key = rows[i].LargeCategory + "/" + rows[i].MediumCategory + "/" + rows[i].SmallCategory
         var keyId = treeMap.get(key)
         if (keyId === undefined) {
@@ -140,8 +145,17 @@ export function GetColumnsResize() {
         {
             columnName: 'Owner',
             width: 100
+        },
+        {
+            columnName: 'Action',
+            width: 100
         }
     ];
 
+    return columns;
+}
+
+export function GetBooleanColumns() {
+    var columns = ['Complete']
     return columns;
 }
